@@ -52,16 +52,15 @@ class VigenereCipher:
             temp_key_lst:list = []
             if len(c):
                 temp_dec_lst.append(str((c[0]+self.__decrypt_key[0])%3))
-                temp_key_lst.append(str(self.__decrypt_key[0]))
+                temp_key_lst.append(str(c[0]))
             if len(c) > 1:
                 temp_dec_lst.append(str((c[1]+self.__decrypt_key[1])%3))
-                temp_key_lst.append(str(self.__decrypt_key[1]))
+                temp_key_lst.append(str(c[1]))
             if len(c) > 2:
                 temp_dec_lst.append(str((c[2]+self.__decrypt_key[2])%3))
-                temp_key_lst.append(str(self.__decrypt_key[2]))
+                temp_key_lst.append(str(c[2]))
             decrypt_lst += [''.join(temp_dec_lst)+" "]
             key_lst += [''.join(temp_key_lst)+" "]
-        
         key_lst = ''.join(key_lst)
         self.__decrypt_text = ''.join(decrypt_lst)
         print(f'The key of the decrypt text is: {key_lst}')
